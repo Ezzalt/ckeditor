@@ -32,7 +32,7 @@ module Ckeditor
     end
 
     def file
-      !(ckeditor? || json?) ? params[:qqfile] : params[:upload]
+      !(ckeditor? || json?) ? params[:qqfile] : params[:uploaded]
     end
 
     def current_mode
@@ -40,7 +40,7 @@ module Ckeditor
     end
 
     def success(relative_url_root = nil)
-      send("success_#{current_mode}", relative_url_root)
+      send("success_json", relative_url_root)
     end
 
     def errors

@@ -10,7 +10,6 @@ class Ckeditor::ApplicationController < Ckeditor.parent_controller.constantize
   protected
 
   def respond_with_asset(asset)
-    binding.pry
     asset_response = Ckeditor::AssetResponse.new(asset, request)
     asset.data = asset_response.data
 
